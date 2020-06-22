@@ -8,6 +8,7 @@
 #include <iostream>
 #include "EasyGit.hpp"
 #include "Library/Colorized.hpp"
+#include "Library/FileSystemPlusPlus.h"
 
 #define READY 0
 
@@ -43,7 +44,17 @@ int main(int argc, char** argv) {
         				SystemIntegration("git remote add origin " + Arg); 
         				SystemIntegration("git pull origin master");
         				SystemIntegration("git push -f origin master");
-				} else if(arg == "--b") {
+				} else if(arg == "--license") {
+					Arg.erase();
+					printf("Which License? (e.g. : MIT, Apache2.0, GPLv3)");
+					std::getline(std::cin, Arg);
+					if(Arg == "MIT") {
+						fsplusplus::CreateFile("LICENSE", git.MITLicense);
+					} else if(Arg == "Apache2.0") {
+					
+					} else if(Arg == "GPLv3") {
+					
+					}
 					
 				} else if(arg == "--help") {
 					git.HelpFunction();
