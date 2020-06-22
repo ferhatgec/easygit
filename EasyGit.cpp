@@ -48,12 +48,24 @@ int main(int argc, char** argv) {
 					Arg.erase();
 					printf("Which License? (e.g. : MIT, Apache2.0, GPLv3)");
 					std::getline(std::cin, Arg);
-					if(Arg == "MIT") {
-						fsplusplus::CreateFile("LICENSE", git.MITLicense);
+					if(Arg == "MIT") { 
+						std::string year;
+						std::string name;
+						printf("Year :");
+						std::getline(std::cin, year);
+						printf("What is your name && surname? :");
+						std::getline(std::cin, name);
+						fsplusplus::CreateFile("LICENSE", git.MITLicense(year, name));
 					} else if(Arg == "Apache2.0") {
 					
 					} else if(Arg == "GPLv3") {
-					
+						std::string year;
+						std::string name;
+						printf("Year :");
+						std::getline(std::cin, year);
+						printf("What is your name && surname? :");
+						std::getline(std::cin, name);
+						fsplusplus::CreateFile("LICENSE", git.GPLv3License(year, name));
 					}
 					
 				} else if(arg == "--help") {
