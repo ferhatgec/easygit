@@ -35,9 +35,12 @@ int main(int argc, char** argv) {
 			std::string arg(argv[i]);
 			if(arg.substr(0, 2) == "--") {
 				if(arg == "--easy") {
+					Arg.erase();
+					std::getline(std::cin, Arg);
 					SystemIntegration("git init");
         				SystemIntegration("git add .");
         				SystemIntegration("git commit -m \"First Commit\"");
+        				SystemIntegration("git remote add origin " + Arg); 
         				SystemIntegration("git pull origin master");
         				SystemIntegration("git push -f origin master");
 				} else if(arg == "--b") {
