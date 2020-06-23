@@ -353,12 +353,13 @@ namespace fsplusplus {
     		file.close();
 	}
 	
-	void CreateFileWithoutAppend(std::string name) {
+	void CreateFileWithoutAppend(std::string name, std::string input) {
 		std::string path;
     		path.append(GetCurrentWorkingDir());
     		path.append("/");
     		path.append(name);
     		std::ofstream file(path);
+    		file << input;
     		file.close();
 	}
 }
