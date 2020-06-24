@@ -11,6 +11,9 @@
 #include <iostream>
 #include <cstring>
 
+#define EASYGIT_VERSION "0.1"
+#define EASYGIT_STATUS "beta"
+
 class EasyGit {
 public:
   EasyGit() { }
